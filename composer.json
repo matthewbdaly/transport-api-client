@@ -28,7 +28,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Matthewbdaly\\ApiClientBoilerplate\\": "src/"
+            "Matthewbdaly\\TransportApi\\": "src/"
         }
     }
 }

@@ -1,0 +1,4 @@
+suites:
+    test_suite:
+        namespace: Matthewbdaly\ApiClientBoilerplate
+        psr4_prefix: Matthewbdaly\ApiClientBoilerplate

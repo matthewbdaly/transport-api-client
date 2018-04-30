@@ -2,6 +2,8 @@
 
 namespace Matthewbdaly\TransportApi;
 
-class Client
+use Matthewbdaly\TransportApi\Contracts\Client as ClientInterface;
+
+class Client implements ClientInterface
 {
 }

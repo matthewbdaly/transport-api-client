@@ -12,4 +12,9 @@ class ClientSpec extends ObjectBehavior
     {
         $this->shouldHaveType(Client::class);
     }
+
+    function it_implements_interface()
+    {
+        $this->shouldImplement('Matthewbdaly\TransportApi\Contracts\Client');
+    }
 }

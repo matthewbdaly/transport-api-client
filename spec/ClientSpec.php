@@ -15,7 +15,9 @@ class ClientSpec extends ObjectBehavior
 {
     function let (HttpClient $client, MessageFactory $messageFactory)
     {
-        $this->beConstructedWith($client, $messageFactory);
+        $appId = "Foo";
+        $key = "Bar";
+        $this->beConstructedWith($appId, $key, $client, $messageFactory);
     }
 
     function it_is_initializable()

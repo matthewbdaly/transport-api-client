@@ -1,6 +1,6 @@
 {
-    "name": "matthewbdaly/api-client-boilerplate",
-    "description": "PHP API client boilerplate",
+    "name": "matthewbdaly/transport-api-client",
+    "description": "PHP Transport API client",
     "type": "library",
     "keywords": ["api","client"],
     "require": {

@@ -7,6 +7,7 @@ use Http\Client\HttpClient;
 use Http\Message\MessageFactory;
 use Http\Discovery\HttpClientDiscovery;
 use Http\Discovery\MessageFactoryDiscovery;
+use Psr\Http\Message\ResponseInterface;
 
 /**
  * Client for the Transport API
@@ -59,7 +60,7 @@ class Client implements ClientInterface
         $this->messageFactory = $messageFactory ?: MessageFactoryDiscovery::find();
     }
 
-    public function getDepartures($from, $to = null)
+    public function getDepartures(string $from, string $to = null): ResponseInterface
     {
         $query = http_build_query([
             'app_id' => $this->appId,

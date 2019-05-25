@@ -12,9 +12,8 @@ use Psr\Http\Message\ResponseInterface;
 /**
  * Client for the Transport API
  */
-class Client implements ClientInterface
+final class Client implements ClientInterface
 {
-
     /**
      * HTTPlug client
      *
@@ -52,7 +51,7 @@ class Client implements ClientInterface
      * @param MessageFactory $messageFactory HTTPlug message factory instance.
      * @return void
      */
-    public function __construct($appId, $key, HttpClient $client = null, MessageFactory $messageFactory = null)
+    public function __construct(string $appId, string $key, HttpClient $client = null, MessageFactory $messageFactory = null)
     {
         $this->appId = $appId;
         $this->key = $key;
@@ -60,6 +59,13 @@ class Client implements ClientInterface
         $this->messageFactory = $messageFactory ?: MessageFactoryDiscovery::find();
     }
 
+    /**
+     * Get live train departures
+     *
+     * @param string $from Departure station.
+     * @param string $to   Destination station.
+     * @return ResponseInterface
+     */
     public function getDepartures(string $from, string $to = null): ResponseInterface
     {
         $query = http_build_query([

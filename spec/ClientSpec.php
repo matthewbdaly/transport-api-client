@@ -30,7 +30,7 @@ class ClientSpec extends ObjectBehavior
         $this->shouldImplement('Matthewbdaly\TransportApi\Contracts\Client');
     }
 
-    function it_can_get_departures(HttpClient $client, MessageFactory $messageFactory, RequestInterface $request, ResponseInterface $response)
+    function it_can_get_train_departures(HttpClient $client, MessageFactory $messageFactory, RequestInterface $request, ResponseInterface $response)
     {
         $appId = "Foo";
         $key = "Bar";
@@ -38,6 +38,6 @@ class ClientSpec extends ObjectBehavior
         $url = "http://transportapi.com/v3/uk/train/station/NRW/live.json?app_id=$appId&app_key=$key&destination=LST&train_status=passenger";
         $messageFactory->createRequest('GET', $url)->willReturn($request);
         $client->sendRequest($request)->willReturn($response);
-        $this->getDepartures('NRW', 'LST')->shouldReturn($response);
+        $this->getTrainDepartures('NRW', 'LST')->shouldReturn($response);
     }
 }

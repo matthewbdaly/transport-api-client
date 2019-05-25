@@ -66,7 +66,7 @@ final class Client implements ClientInterface
      * @param string $to   Destination station.
      * @return ResponseInterface
      */
-    public function getDepartures(string $from, string $to = null): ResponseInterface
+    public function getTrainDepartures(string $from, string $to = null): ResponseInterface
     {
         $query = http_build_query([
             'app_id' => $this->appId,
